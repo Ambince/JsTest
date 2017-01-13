@@ -188,8 +188,7 @@
 			//NO1)创建AJAX异步对象（每个浏览器内置的，无需第三方jar包）
 			createAJAX()
 			//NO2)AJAX异步对象准备发送请求
-			var url = "${pageContext.request.contextPath}/getTimeServlet?id="
-					+ new Date().getTime();
+			var url = "${pageContext.request.contextPath}/getTimeServlet"
 			var method = "GET";
 			ajax.open(method, url);//1
 			//NO3）AJAX异步对象真正发送请求体的数据到服务器，如果请求体无数据的话，用null表示  
