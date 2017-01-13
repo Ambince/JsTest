@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -23,7 +24,7 @@ public class ProvinceCityServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		String province = req.getParameter("province");
-		System.out.println(province);
+		System.out.println("doPOSt");
 		// 通知AJAX异步对象，服务器响应的数据为xml格式的
 		resp.setContentType("text/xml;charset=UTF-8");
 		PrintWriter pw = resp.getWriter();

@@ -36,22 +36,26 @@
 				ajax.open(method, url);
 				ajax.setRequestHeader("content-type",
 						"application/x-www-form-urlencoded");
-				var content = "province=" +  province;
+				var content = "province=" + province;
 				ajax.send(content);
-			
-			ajax.onreadystatechange = function(){
-				if(ajax.readyState ==4){
-					if(ajax.status ==200){
-						var xmlDocument = ajax.responseXML;
-						var cityElementArray = xmlDocument.getElementsByTagName("city");
-						var size = cityElementArray.length;
-						for(var i=0;i<size;i++){
-							var city = cityElementArray[i].firstChild.nodeValue;
-							var optionElement = document.createElement("option");
-							optionElement.innerHTML = city;
-							cityElement.appendChild(optionElement);
-							
-						}}
+
+				ajax.onreadystatechange = function() {
+					if (ajax.readyState == 4) {
+						if (ajax.status == 200) {
+							var xmlDocument = ajax.responseXML;
+							var cityElementArray = xmlDocument
+									.getElementsByTagName("city");
+							var size = cityElementArray.length;
+							alert(size);
+							for (var i = 0; i < size; i++) {
+								var city = cityElementArray[i].firstChild.nodeValue;
+								var optionElement = document
+										.createElement("option");
+								optionElement.innerHTML = city;
+								cityElement.appendChild(optionElement);
+
+							}
+						}
 					}
 				}
 			}

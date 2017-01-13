@@ -9,8 +9,8 @@
 </head>
 <body>
 	<form>
-		用户名GET：<input id="usernameID" type="text" name="username"
-			/> 光标移出后，立即检查结果
+		用户名GET：<input id="usernameID" type="text" name="username" />
+		光标移出后，立即检查结果
 
 	</form>
 	<hr />
@@ -19,31 +19,32 @@
 
 	<script type="text/javascript">
 		//定位文本框，同时提供焦点失去事件
-		document.getElementById("usernameID").onblur = function(){
+		document.getElementById("usernameID").onblur = function() {
 			//获取文本框中输入的值
 			var username = this.value;
 			//如果用户没有填内容
-			if(username.length == 0){
+			if (username.length == 0) {
 				//提示 
 				document.getElementById("resID").innerHTML = "用户名必填";
-			}else{
+			} else {
 				//对汉字进行UTF-8(U8)的编码
-				username = encodeURI(username);
+				//username = encodeURI(username);
 				//NO1)
 				var ajax = createAJAX();
 				//NO2)
 				var method = "GET";
-				var url = "${pageContext.request.contextPath}/UserServlet?time="+new Date().getTime()+"&username=" + username;
-				ajax.open(method,url);
+				var url = "${pageContext.request.contextPath}/UserServlet?time="
+						+ new Date().getTime() + "&username=" + username;
+				ajax.open(method, url);
 				//NO3)
 				ajax.send(null);
-				
+
 				//--------------------------------------------------------等待
-				
+
 				//NO4)
-				ajax.onreadystatechange = function(){
-					if(ajax.readyState == 4){
-						if(ajax.status == 200){
+				ajax.onreadystatechange = function() {
+					if (ajax.readyState == 4) {
+						if (ajax.status == 200) {
 							//NO5)
 							var tip = ajax.responseText;
 							//NO6)

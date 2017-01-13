@@ -4,11 +4,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>TestWeb</display-name>
+
 	<servlet>
 		<servlet-name>getTimeServlet</servlet-name>
 		<servlet-class>getTimeServlet</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>CheckcodeAction</servlet-name>
+		<servlet-class>CheckcodeAction</servlet-class>
+	</servlet>
 	<servlet>
 		<servlet-name>UserServlet</servlet-name>
 		<servlet-class>UserServlet</servlet-class>
@@ -23,6 +28,10 @@
 	<servlet-mapping>
 		<servlet-name>ProvinceCityServlet</servlet-name>
 		<url-pattern>/ProvinceCityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckcodeAction</servlet-name>
+		<url-pattern>/CheckcodeAction</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
